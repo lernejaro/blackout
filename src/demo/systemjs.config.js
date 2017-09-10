@@ -44,7 +44,7 @@
       rxjs: {
         defaultExtension: 'js',
       },
-      'blackout': {
+      '@lernejaro/blackout': {
         main: 'index.js',
         defaultExtension: 'js',
         meta: {

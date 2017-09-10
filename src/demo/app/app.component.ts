@@ -1,5 +1,5 @@
 import {Component} from '@angular/core'
-import {BlackoutService} from 'blackout'
+import {BlackoutService} from '@lernejaro/blackout'
 
 @Component({
   selector: 'demo-app',

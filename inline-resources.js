@@ -62,7 +62,7 @@ function inlineResourcesFromString(content, urlResolver) {
   // Curry through the inlining functions.
   return [
     inlineTemplate,
-    inlineStyle
+    inlineStyle,
   ].reduce((content, fn) => fn(content, urlResolver), content);
 }
 
@@ -96,14 +96,20 @@ function inlineStyle(content, urlResolver) {
   return content.replace(/styleUrls:\s*(\[[\s\S]*?\])/gm, function (m, styleUrls) {
     const urls = eval(styleUrls);
     return 'styles: ['
-      + urls.map(styleUrl => {
-        const styleFile = urlResolver(styleUrl);
-        const styleContent = fs.readFileSync(styleFile, 'utf-8');
-        const shortenedStyle = styleContent
-          .replace(/([\n\r]\s*)+/gm, ' ')
-          .replace(/"/g, '\\"');
-        return `"${shortenedStyle}"`;
-      })
+      + urls
+        .map(url => url.replace(/\.scss$/, '.css'))
+        .map(x => {
+          console.log(x)
+          return x
+        })
+        .map(styleUrl => {
+          const styleFile = urlResolver(styleUrl);
+          const styleContent = fs.readFileSync(styleFile, 'utf-8');
+          const shortenedStyle = styleContent
+            .replace(/([\n\r]\s*)+/gm, ' ')
+            .replace(/"/g, '\\"');
+          return `"${shortenedStyle}"`;
+        })
         .join(',\n')
       + ']';
   });

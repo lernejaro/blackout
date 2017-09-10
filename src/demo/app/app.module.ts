@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core'
 import {BrowserModule} from '@angular/platform-browser'
-import {BlackoutModule} from 'blackout'
-import {AppComponent} from './app.component'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {AppComponent} from './app.component'
+import {BlackoutModule} from '@lernejaro/blackout'
 
 @NgModule({
   imports: [

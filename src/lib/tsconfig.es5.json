@@ -15,7 +15,7 @@
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "blackout.js",
-    "flatModuleId": "blackout",
+    "flatModuleId": "@lernejaro/blackout",
     "genDir": "../../out-tsc/lib-gen-dir/"
   }
 }
