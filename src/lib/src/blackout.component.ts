@@ -7,7 +7,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations'
   template: `
     <ng-content></ng-content>
   `,
-  styleUrls: ['./blackout.component.scss'],
+  styleUrls: ['./blackout.component.css'],
   animations: [
     trigger('showHide', [
       state('*', style({

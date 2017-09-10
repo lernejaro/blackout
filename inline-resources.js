@@ -97,11 +97,6 @@ function inlineStyle(content, urlResolver) {
     const urls = eval(styleUrls);
     return 'styles: ['
       + urls
-        .map(url => url.replace(/\.scss$/, '.css'))
-        .map(x => {
-          console.log(x)
-          return x
-        })
         .map(styleUrl => {
           const styleFile = urlResolver(styleUrl);
           const styleContent = fs.readFileSync(styleFile, 'utf-8');
