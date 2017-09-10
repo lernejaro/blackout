@@ -131,7 +131,7 @@ return Promise.resolve()
     .then(() => console.log('Package files copy succeeded.')),
   )
   .catch(e => {
-    console.error('\Build failed. See below for errors.\n');
+    console.error('Build failed. See below for errors.\n');
     console.error(e);
     process.exit(1);
   });
