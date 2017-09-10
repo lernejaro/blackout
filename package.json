@@ -1,6 +1,6 @@
 {
   "name": "@lernejaro/blackout",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple blackout module",
   "main": "./bundles/blackout.umd.js",
   "module": "./blackout.es5.js",
