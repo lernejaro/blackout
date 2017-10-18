@@ -1,6 +1,6 @@
 {
   "name": "@lernejaro/blackout",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A simple blackout module",
   "main": "./bundles/blackout.umd.js",
   "module": "./blackout.es5.js",
@@ -39,7 +39,8 @@
     "integration:jit": "cd integration && npm run e2e",
     "integration:aot": "cd integration && npm run e2e:aot",
     "lint": "tslint .src/**/*.ts -t verbose",
-    "release": "standard-version"
+    "release": "standard-version",
+    "release:quick": "npm run build && npm run release && npm run build && git push --follow-tags origin master && npm publish dist"
   },
   "peerDependencies": {
     "@angular/core": ">=4.0.0",
